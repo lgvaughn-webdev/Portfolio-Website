@@ -1,0 +1,502 @@
+/* LGV Portfolio - VERSION 1.2, Opened 04.01.26 
+_______________________________________________
+Last Update: 04.20.2026 */
+
+
+/* || COLOR OPTIONS - alternatives for record: 
+medium green: rgba(87, 199, 150, 0.551)  
+light green: rgba(202, 255, 206, 0.551)
+light orange: rgba(255, 223, 202, 0.551)
+light blue: rgba(202, 241, 255, 0.551)
+light purple: rgba(219, 202, 255, 0.551)
+light/powder red: rgba(255, 202, 202, 0.551)
+background-green: rgba(234, 254, 237, 0.551)
+*/
+
+/* || VARIABLES - color values */
+:root {
+  --color-confident: 162, 255, 168; /*green*/
+  --color-comfortable: 162, 213, 255; /*blue*/
+  --color-familiar: 255, 162, 207; /*red*/
+  --color-default-cell: 255, 253, 162; /*yellow*/
+  --nav-default-color: #fef7ff; /*grey-liliac*/
+  --nav-start-color: rgb(221, 169, 255);
+  --nav-end-color: rgb(255, 152, 246);
+}
+
+/* || GENERAL STYLES */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Condensed", serif;
+  font-weight: 300;
+  text-decoration: none;
+  color: #000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 243, 235, 0.551) 50%, rgb(255, 255, 255) 100%);
+}
+
+hr {
+  border: solid 1px #000;
+}
+
+/* || GENERAL SECTION STYLES */
+.section {
+  width: 100%;
+  height: max(100vh, 500px);
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 25px auto;
+}
+
+.text-content {
+  font-size: 1.5rem;
+}
+
+
+/* MISC. STYLES */
+.dazzle {
+  font-family: Roboto Condensed, 'Times New Roman', Times, serif;
+}
+
+#smiley:hover {
+  animation: 1.8s roll infinite;
+}
+
+@keyframes roll {
+  from {
+    rotate:0deg;
+  }
+  5% {
+    rotate:-5deg;
+  }
+  80% {
+    rotate: 1085deg;
+  } 
+  to {
+    rotate:1080deg;
+  }
+}
+
+/* || SOCIAL ICONS - Properties */
+.social-icons {
+  padding: 2px;
+  width: 40px;
+  height: 40px;
+} 
+
+.social-icons:hover {
+  z-index: 1;
+  animation: .8s icons-change-size;
+}
+
+@keyframes icons-change-size {
+  from {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.12);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+#header-contact-icon > a > .social-icons {
+  background-color: var(--nav-default-color);
+  border: solid 1px #000;
+  border-radius: 5px;
+  filter: drop-shadow(5px 10px 10px #00000080);
+} 
+#header-contact-icon > a > .social-icons:hover {
+  background-color: var(--nav-end-color);
+}
+
+#footer-contact-icon {
+  width: max(15%, 150px);
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  background-color: #fff;
+  border: #00000045 solid 1px;
+  border-radius: 5px;
+} 
+#footer-contact-icon > .social-icons {
+  border: solid 1px #000;
+  border-radius: 5px;
+}
+
+/* || NAV AREA - Properties */
+nav {
+  width: 50%;
+  display: flex;
+  flex-flow: row nowrap;
+  flex-basis: auto;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  border-bottom: #000 solid 1px;
+  filter: drop-shadow(0px 7px 10px #00000080);
+  position: fixed;
+  top: 0;
+}
+
+nav > a {
+  font-size: 1.2rem;
+}
+
+nav > a:hover {
+  background-color: var(--nav-end-color);
+  animation: .3s nav-animation;
+}
+
+@keyframes nav-animation {
+  from {
+    background-color: var(--nav-start-color);
+  }
+  to {
+    background-color: var(--nav-end-color);
+  }
+}
+
+@media (max-width: 800px) {
+  nav {
+    width: 100%;
+  }
+}
+
+nav > * {
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: .8rem;
+  background-color: var(--nav-default-color);
+  border-right: solid #000 1px;
+}
+
+/* || HEADER AREA - Properties */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+#header-background {
+  width: 100%;
+  height: 160%;
+  position: absolute;
+  z-index: -1;
+  opacity: .2;
+}
+
+#header-title-card {
+  width: min(80%, 1000px);
+  height: min(70%, 400px);
+  padding: 45px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  row-gap: 1rem;
+  background-color: #fff;
+  border: solid 1px #000;
+  border-radius: 10px;
+  box-shadow: 10px 10px #000;
+}
+
+h3[id="jobTitle"] {
+    font-family: 'Crimson Text', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+p[id="jobLocation"] {
+    font-family: 'Crimson Text', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+p[id="jobEmail"] {
+    font-family: 'Crimson Text', serif;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* || MAIN AREA - Properties */
+main {
+  height: 100%;
+  margin-top: 50px;
+}
+
+#mainGrid {
+  display: grid;
+  width: 95%;
+  margin: 0px auto;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas: "title1 title2" "about skills";
+  gap: 0px 15px;
+}
+
+/* mainGrid: Grid Item Placement */
+#about { grid-area: title1; }
+#aboutContent { grid-area: about; }
+#skills { grid-area: title2; }
+#skills-section {grid-area: skills;}
+
+
+/* || ABOUT SECTION - Properties */
+#aboutTitle {
+  padding-bottom: .3rem;
+  padding-left: 15%;
+  padding-right: 15%;
+  border-bottom: #00000045 solid 1px;
+}
+
+#aboutContent {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#aboutContent > * {
+  margin-bottom: max(25px, 15px);
+}
+
+#aboutContent > h3[class="quote"] {
+  font-family: 'Crimson Text', serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+} 
+
+#aboutContent > p {
+  text-align: center;
+}
+
+/* || SKILLS SECTION - Properties */
+#skills-section {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#skills {
+  padding-bottom: .3rem;
+  padding-left: 15%;
+  padding-right: 15%;
+  border-bottom: #00000045 solid 1px;
+}
+
+/* || TABLE - Properties */
+table {
+  margin: auto;
+  margin-top: 10vh;
+  margin-bottom: 2vh;
+  width: 90%;
+}
+
+th {
+  background-color: #00000015;
+  padding: 1rem;
+} 
+td {
+  z-index: 0;
+  padding: .5rem .8rem;
+  width: 15%;
+  text-align: center;
+} 
+td[class="default-cell"] { 
+  text-align: left; 
+}
+/* || TABLE CELL COLORS - Static classes */
+.confident {
+  background-color: rgb(var(--color-confident));
+} .comfortable {
+  background-color: rgb(var(--color-comfortable));
+} .familiar {
+  background-color: rgb(var(--color-familiar));
+} .default-cell {
+  background-color: rgb(var(--color-default-cell));
+}
+/* || TABLE CELL COLORS - Hover classes */
+[class="confident"]:hover, [class="comfortable"]:hover, [class="familiar"]:hover { 
+    position: relative;
+    z-index: 1;
+    font-style: none;
+    font-weight: 400;
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.73), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+[class="confident"]:hover {
+  background-color: rgba(var(--color-confident), 0.7);
+}
+[class="comfortable"]:hover {
+  background-color: rgba(var(--color-comfortable), 0.7);
+}
+[class="familiar"]:hover {
+  background-color: rgba(var(--color-familiar), 0.7);
+}
+[class="default-cell"]:hover {
+  background-color: rgba(var(--color-default-cell), 0.7);
+}
+/* || COLOR KEY - Properties */
+#colorKey {
+  background-color: #00000010;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 15px;
+  width: 80%;
+  margin: auto;
+} 
+#colorTitle {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+.color-code {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+} .color-code > svg {
+  margin: 5px;
+} .color-code > p {
+  color: #000;
+}
+
+/* || PROJECT SECTION - Properties */
+#project-title {
+  margin-top: 5rem;
+}
+#projectBar {
+  width: 75%;
+  height: 1px;
+  margin: auto;
+}
+#projectSection {
+  margin-bottom:4rem;
+}
+
+/* || CARDS - Properties */
+.project {
+  width: max(450px, 25%);
+  height: max(250px, 50%);
+  padding-bottom: 35px;
+  margin: 25px max(5%, 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border: #00000045 solid 5px;
+  border-radius: 3px;
+} 
+.project:hover {
+  transition: .1s;
+  border-color: #1e65ff45;
+}
+.project > h3 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.3;
+  text-decoration: underline;
+}
+.project > h3, .project > p {
+  padding-top: 20px;
+}
+.project-img {
+  width: max(100%);
+  height: max(200px);
+} 
+.date {
+  font-style: italic;
+}
+#cardHolder {
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* || FOOTER SECTION - Properties */
+footer {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: #fff;
+  border-top: #00000045 solid 1px;
+} 
+
+
+/* || PROPERTIES for Screen-size >900px */
+@media (max-width: 900px) {
+  .section {
+      margin-top: 10%;
+  }
+  main[class="section"] {
+    height: 200vh;
+  }  
+
+  #header-background {
+    display: none;
+  }
+
+  #mainGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1fr);
+    grid-template-areas: "title1" "about" "title2" "skills";
+  }
+  header[class="section"] {
+    height: 450px;
+  }
+  #header-title-card {
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+  }
+  #header-contact-icon {
+    margin: auto;
+  } 
+  #header-contact-icon > a {
+    padding: 0px .5rem;
+  }
+
+  #about { grid-area: title1; }
+  #aboutContent { grid-area: about; text-align: center; }
+  #skills { grid-area: title2; }
+  #skills-section { grid-area: skills;}
+}
