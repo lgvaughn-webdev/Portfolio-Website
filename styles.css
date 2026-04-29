@@ -19,7 +19,7 @@ background-green: rgba(234, 254, 237, 0.551)
   --color-comfortable: 162, 213, 255; /*blue*/
   --color-familiar: 255, 162, 207; /*red*/
   --color-default-cell: 255, 253, 162; /*yellow*/
-  --nav-default-color: #fff; /*grey-liliac*/
+  --nav-default-color: #fef7ff; /*grey-liliac*/
   --nav-start-color: rgb(221, 169, 255);
   --nav-end-color: rgb(255, 152, 246);
 }
@@ -43,7 +43,7 @@ body {
   width: 100%;
   height: 100%;
   background: #ffffff;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(200, 200, 200, 0.551) 50%, rgb(255, 255, 255) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 243, 235, 0.551) 50%, rgb(255, 255, 255) 100%);
 }
 
 hr {
